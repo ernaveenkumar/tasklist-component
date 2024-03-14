@@ -1,31 +1,23 @@
-import { useState } from 'react';
 
-export const HomePage = () => {
-  const [tasks, setTask] = useState([
-    { id: 5271, name: 'Learn React', completed: false },
-    { id: 5272, name: 'Learn Javascript', completed: true },
-    {
-      id: 5273,
-      name: 'Submit Ethics application to supervisor',
-      completed: true,
-    },
-  ]);
+
+export const HomePage = ({ taskList, setTask }) => {
+
 
   function handleClick(id) {
     setTask(
-      tasks.map((task) => {
+      taskList.map((task) => {
         return task.id === id ? { ...task, completed: !task.completed } : task;
       })
     );
   }
 
   function handleDelete(id) {
-    setTask(tasks.filter((task) => task.id !== id));
+    setTask(taskList.filter((task) => task.id !== id));
   }
 
   return (
     <div>
-      <table class="table-fixed">
+      <table className="table-fixed">
         <thead>
           <tr>
             <th>Task Id</th>
@@ -35,7 +27,7 @@ export const HomePage = () => {
           </tr>
         </thead>
         <tbody>
-          {tasks.map((task) => (
+          {taskList.map((task) => (
             <>
               <tr id={task.id}>
                 <td className="list-group-item text-2xl w-44 text-center">

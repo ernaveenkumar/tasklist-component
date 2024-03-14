@@ -6,8 +6,6 @@
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0px;
-  padding: 0px;
 }
 .btn {
 }
@@ -31,4 +29,7 @@
 .btn-dark {
 }
 .btn-link {
+}
+.main{
+  min-height:75vh;
 }
